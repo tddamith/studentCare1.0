@@ -19,8 +19,17 @@ stuCareApp.factory('attendanceServices', function ($http, baseUrls) {
         });
     };
 
+    var saveAttendance = function (param) {
+        return $http({
+            method: 'POST',
+            url: baseUrls.mainUrl + "attendance/insert",
+            data : param
+        });
+    };
+
     return {
         GetAllLecture: getAllLecture,
-        GetLectureHasSubject: getLectureHasSubject
+        GetLectureHasSubject: getLectureHasSubject,
+        saveAttendance: saveAttendance
     }
 });

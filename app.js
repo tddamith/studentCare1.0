@@ -43,8 +43,8 @@ stuCareApp.config(["$httpProvider", "$stateProvider", "$urlRouterProvider",
 
 //public API url
 var baseUrls = {
-    'loginUrl': 'http://192.168.5.178:3000/',
-    'mainUrl': 'http://192.168.5.178:3000/'
+    'loginUrl': 'http://build.duoworld.com:3030/',
+    'mainUrl': 'http://build.duoworld.com:3030/'
 
 };
 stuCareApp.constant('baseUrls', baseUrls);
