@@ -2,9 +2,7 @@
  * Created by **** on 10/20/2016.
  */
 
-var stuCareApp = angular.module('stuCareApp', ['ngRoute', 'ui.bootstrap',
-    'ui.router', 'jlareau.pnotify',
-    'ui.bootstrap.datetimepicker']);
+var stuCareApp = angular.module('stuCareApp', ['ngRoute','jlareau.pnotify', 'ui.bootstrap', 'ui.router']);
 
 
 //app router
@@ -14,7 +12,8 @@ stuCareApp.config(["$httpProvider", "$stateProvider", "$urlRouterProvider",
         $urlRouterProvider.otherwise('/login');
         $stateProvider.state("dashboard", {
             url: "/dashboard",
-            templateUrl: "app/views/dashboard.html"
+            templateUrl: "app/views/dashboard.html",
+            controller : 'mainCtrl'
         }).state('dashboard.admin', {
             url: "/admin",
             templateUrl: "app/views/admin.html"

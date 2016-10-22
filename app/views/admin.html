@@ -1,4 +1,4 @@
-<div ng-controller="mainCtrl">
+<div >
     <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-4">
@@ -33,8 +33,8 @@
                         <img src="assets/img/advertisement.png" width="200">
                     </div>
                     <div class="dashboard-btn-body">
-                        <div class="btn-wrap blue" ng-click="advertisement.openMode();">
-                            new advertisement
+                        <div class="btn-wrap blue">
+                            new student
                         </div>
                         <div class="btn-wrap blue">
                             Update and view student
@@ -46,7 +46,7 @@
             <div class="col-lg-4">
                 <div class="dashboard-btn-wrap bg-color3">
                     <div class="header">
-                        <h3>attendance</h3>
+                        <h3>TIME TABLE</h3>
                         <p>create new time table</p>
                     </div>
                     <div class="btn-img-wrapper">
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="model-btn">
-                            <li><span class="btn-save">SAVE</span></li>
+                            <li><span class="btn-save"  ng-click="student.saveMode()">SAVE</span></li>
                             <li><span class="btn-close" ng-click="student.closeMode();">CLOSE</span></li>
                         </ul>
                     </div>
@@ -115,37 +115,51 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <select class="form-control">
-                                            <option value="" disabled selected>year</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                        <select class="form-control" ng-model="bYear">
+                                            <option value="" disabled>year</option>
+                                            <option value="1993" selected>1993</option>
+                                            <option value="1994" >1994</option>
+                                            <option value="1995" >1995</option>
+                                            <option value="1996" >1996</option>
+                                            <option value="1997" >1997</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <select class="form-control">
-                                            <option value="" disabled selected>month</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                        <select class="form-control" ng-model="bMonth">
+                                            <option value="" >month</option>
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <select class="form-control">
-                                            <option value="" disabled selected>day</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                        <select class="form-control" ng-model="bDay">
+                                            <option value="" disabled>day</option>
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
                                         </select>
                                     </div>
                                 </div>
@@ -159,7 +173,7 @@
                                         <select class="form-control"
                                                 id="gender"
                                                 ng-model="student.gender">
-                                            <option value="" disabled selected>select your gender</option>
+                                            <option value="" disabled>select your gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -172,12 +186,10 @@
                                         <select class="form-control"
                                                 id="faculty"
                                                 ng-model="student.faculty">
-                                            <option value="" disabled selected>select your faculty</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option value="" disabled >select your faculty</option>
+                                            <option value="FOC" >FOC</option>
+                                            <option value="FOE" >FOE</option>
+                                            <option value="FOB" >FOB</option> 
                                         </select>
                                     </div>
                                 </div>
@@ -186,8 +198,8 @@
                                     <label for="nic">NIC</label>
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <input type="text" ng-model="student.nic" ng-model="student.student_refno"
-                                                   class="form-control form-text" id="nic">
+                                            <input type="text" ng-model="student.nic" ng-model="student.nic"
+                                                   class="form-control form-text" id="nic" required>
                                         </div>
                                     </div>
                                 </div>
@@ -201,7 +213,7 @@
                                         <div class="form-group">
                                             <input type="text"
                                                    ng-model="student.contactNo"
-                                                   class="form-control form-text" id="contactNo">
+                                                   class="form-control form-text" id="contactNo" required>
                                         </div>
                                     </div>
                                 </div>

@@ -4,11 +4,13 @@
 
 
 stuCareApp.factory('studentServices', function ($http, baseUrls) {
-
-    var getSubjectId = function (year) {
+    var createNew = function (param) {
         return $http({
-            method: 'get',
-            url: baseUrls.mainUrl + "subject/all/" + year
+            method: 'post',
+            url: baseUrls.loginUrl + "register/parent",
+            data: param
+        }).then(function (response) {
+            return response.data.IsSuccess;
         });
     };
 
