@@ -3,7 +3,7 @@
  */
 
 
-stuCareApp.factory('adverServices', function ($http, baseUrls) {
+stuCareApp.factory('studentServices', function ($http, baseUrls) {
     var createNew = function (param) {
         return $http({
             method: 'post',

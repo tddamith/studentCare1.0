@@ -33,8 +33,8 @@
                         <img src="assets/img/advertisement.png" width="200">
                     </div>
                     <div class="dashboard-btn-body">
-                        <div class="btn-wrap blue">
-                            new student
+                        <div class="btn-wrap blue" ng-click="advertisement.openMode();">
+                            new advertisement
                         </div>
                         <div class="btn-wrap blue">
                             Update and view student
@@ -238,6 +238,85 @@
                         </ul>
                     </div>
 
+                </div>
+
+                <div class="body">
+                    <!-- START FORM -->
+                    <!-- START FORM -->
+                    <div class="col-lg-12">
+                        <form>
+                            <div class="row">
+                                <!-- student_refno -->
+                                <div class="col-lg-6">
+                                    <label for="gender">Admin ID</label>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="adminID" disabled
+                                               ng-model="student.student_refno"
+                                               class="form-control form-text" id="adminId">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <!-- year -->
+                                    <label for="gender">subject ID</label>
+                                    <div class="form-group">
+                                        <select class="form-control"
+                                                ng-model="faculty">
+                                            <option value="" disabled selected>select your subbjectID</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Content</label>
+                                <textarea class="form-control" rows="5"></textarea>
+                            </div>
+
+
+                            <!-- BirthDay -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Date</label>
+                                        <select class="form-control">
+                                            <option value="" disabled selected>year</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Time</label>
+                                        <select class="form-control">
+                                            <option value="" disabled selected>month</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <!-- END -->
+                    <!-- END -->
+                </div>
+
+                <div class="model-background" style="left: 0;">
+                    <img src="assets/img/advertisement.png" width="225">
                 </div>
 
             </div>
