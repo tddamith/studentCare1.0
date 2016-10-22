@@ -1,0 +1,73 @@
+<div class="login-wrapper" ng-controller="loginCtrl">
+    <div class="bg-color"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-offset-4 col-md-4">
+
+                <!-- SIGN IN -->
+                <div class="login-wrap animated bounceIn  " id="signIn">
+                    <div class="login-header">
+                        <h2>SIGN IN</h2>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="loginEmail" class="font-text-gray">Email address</label>
+                            <input type="email" class="login-txt form-control" id="loginEmail"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPwd" class="font-text-gray">Password</label>
+                            <input type="password" class="login-txt form-control" id="loginPwd"
+                            >
+                        </div>
+                        <button type="submit" class="btn login-btn btn-default btn-block">LOG IN</button>
+                    </form>
+
+                    <div class="text-with-line">
+                        OR
+                    </div>
+                    <div class="login-sm-text" ng-click="clickSignIn.goToSignUp();">
+                        Create New Account
+                    </div>
+                </div>
+
+                <!-- SIGN UP -->
+                <div class="login-wrap signup-wrap animated bounceIn display-none " id="signUp">
+                    <div class="login-header">
+                        <h2>SIGN UP</h2>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="signUpName" class="font-text-gray">Name</label>
+                            <input type="text" ng-model="objSignUp.name" class="login-txt form-control" id="signUpName"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpEmail" class="font-text-gray">Email address</label>
+                            <input type="email" ng-model="objSignUp.email" class="login-txt form-control" id="signUpEmail"
+                            >
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="signUpPwd" class="font-text-gray">Password</label>
+                            <input type="password" ng-model="objSignUp.password" class="login-txt form-control" id="signUpPwd"/>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpRegNo" class="font-text-gray">Student Reg.No</label>
+                            <input type="text" ng-model="objSignUp.student_refno" class="login-txt form-control" id="signUpRegNo"/>
+
+                        </div>
+                        <button type="submit" class="btn login-btn btn-default btn-block" ng-click="clickSignUp.signUpMe()">SIGN UP</button>
+                    </form>
+                    <div class="text-with-line signup-line">
+                        OR
+                    </div>
+                    <div class="login-sm-text" ng-click="clickSignIn.goToSignIn();">
+                        Sign in
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
