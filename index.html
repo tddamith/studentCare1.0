@@ -16,14 +16,16 @@
 -->
 
 <link type="text/css" href="assets/css/bootstrap/bootstrap.css" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Raleway:300,500,600|Roboto+Condensed:300" rel="stylesheet"/>
 <link type="text/css" href="assets/css/animate/animate.css" rel="stylesheet"/>
 <link type="text/css" href="assets/css/student-care.css" rel="stylesheet"/>
 
 
 <body>
 <!--BEGIN BODY -->
-<div ui-view></div>
+<div ui-view>
+
+</div>
 
 <!-- ANGULAR -->
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
@@ -45,10 +47,17 @@
  -->
 <script type="text/javascript" src="app.js"></script>
 
-
-
+<!-- login  -->
 <script type="text/javascript" src="app/auth/services/loginServices.js"></script>
 <script type="text/javascript" src="app/auth/controller/loginCtrl.js"></script>
+
+<!-- student -->
+<script type="text/javascript" src="app/controller/mainCtrl.js"></script>
+<script type="text/javascript" src="app/services/studentServices.js"></script>
+
+
+
+
 
 
 </body>

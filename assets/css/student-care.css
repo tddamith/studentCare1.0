@@ -1,6 +1,10 @@
 
 html, body {
     font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #fbfbfb;
 }
 
 /*login wrapper*/
@@ -11,7 +15,7 @@ html, body {
     top: 0;
     left: 0;
     background-color: rgba(23, 55, 60, 1);
-    background: url(../img/bg.jpg) ;
+    background: url(../img/bg.jpg);
     background-position: top -585px right;
     z-index: 0;
 }
@@ -155,4 +159,206 @@ html, body {
     position: absolute;
     top: 88%;
     width: 43%;
+}
+
+/*dashboard */
+.navbar-brand {
+    padding: 15px 15px;
+}
+
+.navbar-default {
+    background-color: #504E58;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+.dashboard-btn-wrap {
+    width: 100%;
+    height: 450px;
+    margin-top: 40px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-color1 {
+    background: #6D8389;
+}
+
+.bg-color2 {
+    background: #2BB468;
+}
+
+.bg-color3 {
+    background: #278489;
+}
+
+.dashboard-btn-wrap > .header {
+    width: 100%;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.dashboard-btn-wrap > .header > h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.dashboard-btn-wrap > .dashboard-btn-wrap {
+
+}
+
+.btn-img-wrapper {
+    position: absolute;
+    bottom: 13px;
+    left: 2px;
+}
+
+/*.btn-img-wrapper > img {*/
+/*width: 110px;*/
+/*}*/
+.navbar-default .navbar-brand {
+    color: #1392b5 !important;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+.dashboard-btn-body {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+}
+
+.dashboard-btn-body > .btn-wrap {
+    position: relative;
+    text-align: left;
+    padding: 10px 15px 10px 16px;
+    margin-bottom: 5px;
+    border-radius: 5px 0px 0px 5px;
+    color: #fff;
+}
+
+.btn-wrap.yellow {
+    background: #f6dd80;
+}
+
+.btn-wrap.blue {
+    background: #278489;
+}
+
+.btn-wrap.green {
+    background: #2bb468;
+}
+
+.full-with-model {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 2000;
+}
+
+.model {
+    height: 600px;
+    position: relative;
+    background: #ffffff;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.model > .header {
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid #2bb468;
+    border-radius: 4px 4px 0px 0px;
+    padding: 15px 5px 5px 5px;
+}
+
+.model > .header > div > h4 {
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #2bb468;
+}
+
+.model-btn {
+    list-style: none;
+    float: right;
+    margin-top: 10px;
+}
+
+.model-btn > li {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.btn-close {
+    background: #2bb468;
+    color: #fff;
+    padding: 8px 15px 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-save {
+    background: #278489;
+    color: #fff;
+    padding: 8px 15px 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.model-background {
+    position: absolute;
+    right: -12px;
+    top: 200px;
+    z-index: -1;
+}
+
+.model > .body {
+    padding: 29px 10px 10px 10px;
+    width: 100%;
+    height: 100%;
+    background: rgba(249, 247, 247, 0.61);
+    z-index: 200;
+}
+
+label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+.form-text {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+    -webkit-transition: border-color ease-in-out 0s, -webkit-box-shadow ease-in-out 0s;
+    -o-transition: border-color ease-in-out 0s, box-shadow ease-in-out 0s;
+    transition: border-color ease-in-out 0s, box-shadow ease-in-out 0s;
+}
+
+.form-control:focus {
+    border-color: #278489;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0 8px rgba(102, 175, 233, 0);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0 8px rgba(102, 175, 233, 0);
 }
