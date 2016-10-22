@@ -244,7 +244,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="model-btn">
-                            <li><span class="btn-save">SAVE</span></li>
+                            <li><span class="btn-save"  ng-click="advertisement.savePost();">SAVE</span></li>
                             <li><span class="btn-close" ng-click="advertisement.closeMode();">CLOSE</span></li>
                         </ul>
                     </div>
@@ -262,7 +262,7 @@
                                     <label for="gender">Admin ID</label>
                                     <div class="form-group">
                                         <input type="text" placeholder="adminID" disabled
-                                               ng-model="advert.adminId"
+                                               ng-model="userName"
                                                class="form-control form-text" id="adminId">
                                     </div>
                                 </div>
@@ -287,9 +287,9 @@
                                         <div class="form-group">
                                             <label for="gender">subject ID</label>
                                             <select class="form-control"
-                                                    ng-model="faculty">
+                                                    ng-model="advert.subject">
                                                 <option value="" disabled selected>select your subbjectID</option>
-                                                <option value="{{subject.name}}"
+                                                <option  value="{{subject}}"
                                                         ng-repeat="subject in subjectObj">
                                                     {{subject.name}}
                                                 </option>
@@ -301,7 +301,7 @@
 
                             <div class="form-group">
                                 <label for="gender">Content</label>
-                                <textarea class="form-control" rows="5"></textarea>
+                                <textarea class="form-control" rows="5" ng-model="advert.content"></textarea>
                             </div>
 
                             <!-- BirthDay -->
@@ -351,7 +351,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="model-btn">
-                            <li><span class="btn-save">SAVE</span></li>
+                            <li><span class="btn-save"  ng-click="attendance.saveAttendance();">SAVE</span></li>
                             <li><span class="btn-close" ng-click="attendance.closeMode();">CLOSE</span></li>
                         </ul>
                     </div>
@@ -368,7 +368,7 @@
                                     <div class="form-group">
                                         <div class="form-inline">
                                             <div class="form-group">
-                                                <input type="text" placeholder="adminID"
+                                                <input type="text" placeholder="StudentID"
                                                        ng-model="studentAtt.id"
                                                        class="form-control form-text" id="studentId"
                                                        my-enter="attendance.getCurrentUser(studentAtt.id)">
@@ -387,8 +387,8 @@
                                     <div class="form-group">
                                         <label for="gender">Lecturer</label>
                                         <select class="form-control"
-                                                ng-change="attendance.getLectureHasSubject(lectureName)"
-                                                ng-model="lectureName">
+                                                ng-change="attendance.getLectureHasSubject(attendanceObj.lectureName)"
+                                                ng-model="attendanceObj.lectureName">
                                             <option value="" disabled selected>Select Lecture Name</option>
                                             <option value="{{lecture.name}}"
                                                     ng-repeat="lecture in Lectures">{{lecture.name}}
@@ -399,7 +399,7 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="gender">Subject</label>
-                                        <select class="form-control">
+                                        <select class="form-control" ng-model="attendanceObj.subjectID">
                                             <option value="" disabled selected>select subject</option>
                                             <option value="{{subject.subjectRef}}"
                                                     ng-repeat="subject in lectureHasSubjectObj ">{{subject.subjectname}}

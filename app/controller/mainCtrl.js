@@ -3,7 +3,7 @@
  */
 
 stuCareApp.controller('mainCtrl', function ($scope, studentServices, attendanceServices,
-                                            notificationService, loginService) {
+                                            notificationService, loginService,adverServices) {
 
     (loginService.getUserName()) ?  $scope.userName =loginService.getUserName() : $state.go('login')
     //#STUDENT FUNCTION
@@ -105,6 +105,28 @@ stuCareApp.controller('mainCtrl', function ($scope, studentServices, attendanceS
                         console.log(error);
                     });
                 }
+            },
+            savePost : function(){  
+                if ($scope.advert.subject && typeof $scope.advert.subject !== 'object') {
+                    var jsonSub = JSON.parse($scope.advert.subject) 
+                    $scope.advert.subjectID = jsonSub.id;
+                    $scope.advert.subjectName = jsonSub.name;
+                }
+
+                $scope.advert.adminID = loginService.getUserName()
+                // delete $scope.advert.subject;
+
+                adverServices.addPost($scope.advert).then(function (res) {
+                    var data = res.data
+                    if (data.status) {
+                        notificationService.success('successfully added new advertisement');
+                        $scope.advertisement.closeMode();
+                    } else {
+                        notificationService.error(data.message);
+                    }
+                }, function (error) {
+                    console.log(error);
+                });
             }
         }
     }();
@@ -157,6 +179,25 @@ stuCareApp.controller('mainCtrl', function ($scope, studentServices, attendanceS
                 }, function (err) {
                     console.log(err);
                 });
+            },
+            saveAttendance : function(){ 
+                $scope.attendanceObj.studentID = $scope.studentAtt.id;
+                $scope.attendanceObj.startTime = $scope.attendanceObj.time
+                if ($scope.attendanceObj.check === 'IN') {
+                    attendanceServices.saveAttendance($scope.attendanceObj).then(function (res) {
+                        var data = res.data
+                        if (data.status) {
+                            notificationService.success('successfully added new attendance');
+                            $scope.attendance.closeMode();
+                        } else {
+                            notificationService.error(data.message);
+                        }
+                    }, function (err) {
+                        console.log(err);
+                    });                    
+                }else{
+                    notificationService.error('please select check in to add new record', 'top_left');
+                }
             }
         }
 
