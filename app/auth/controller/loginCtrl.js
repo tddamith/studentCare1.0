@@ -2,7 +2,7 @@
  * Created by **** on 10/21/2016.
  */
 
-stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationService) {
+stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationService,$state) {
 
     //##SIGN IN FUNCTIONS
     $scope.clickSignIn = function () {
@@ -43,8 +43,10 @@ stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationSe
                     var data = response.data;
                     console.log(data)
                     if (data.status) {
-                        setCookie(data.data);
-                        notificationService.success('successfully logged in');                }
+                        setCookie(data.data); 
+                        notificationService.success('successfully logged in');   
+                        (data.data.type === 'admin')? $state.go('dashboard.admin') : $state.go('dashboard');
+                    }
                     else{                
                        notificationService.error('incorrect username or password !!!')
                     }
@@ -67,5 +69,7 @@ stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationSe
         var expires = "expires="+ d.toUTCString();
         document.cookie =  'authData='+JSON.stringify(_obj) + ";" + expires + ";path=/";
     }
+
+
 });
 

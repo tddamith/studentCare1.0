@@ -14,7 +14,16 @@ stuCareApp.factory('studentServices', function ($http, baseUrls) {
         });
     };
 
+    var newStudent = function(param){
+        return $http({            
+            method: 'post',
+            url: baseUrls.loginUrl + "register/student",
+            data: param
+        })
+    }
+
     return {
-        CrateNew: createNew
+        CrateNew: createNew,
+        newStudent : newStudent
     }
 });

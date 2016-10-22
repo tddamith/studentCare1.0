@@ -33,10 +33,16 @@ stuCareApp.factory('loginService', function ($http, baseUrls) {
         }
         return "";
     }
+    var getUserName = function(){
+        var cookieObj = getCookie('authData');
+        cookieObj = JSON.parse(cookieObj);
+        return cookieObj.userName
+    }
 
     return {
         SignUpMe: signUp,
         signInMe: signIn,
-        getCookie : getCookie
+        getCookie : getCookie,
+        getUserName : getUserName
     }
 });
