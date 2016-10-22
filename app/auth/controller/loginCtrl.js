@@ -54,7 +54,7 @@ stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationSe
                     notificationService.error('network error occured. please try again later !!!')
                 })
             }
-        }
+        };
 
     }();
 

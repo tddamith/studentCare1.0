@@ -15,13 +15,11 @@ html, body {
     top: 0;
     left: 0;
     background-color: rgba(23, 55, 60, 1);
-    background: url(../img/bg.jpg);
-    background-position: top -585px right;
     z-index: 0;
 }
 
 .bg-color {
-    background: rgba(7, 13, 27, 0.91);
+    background: rgba(7, 13, 27, 1);
     position: absolute;
     width: 100%;
     height: 100%;

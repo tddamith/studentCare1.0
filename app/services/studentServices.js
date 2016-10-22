@@ -20,9 +20,24 @@ stuCareApp.factory('studentServices', function ($http, baseUrls) {
             url: baseUrls.mainUrl + "student/availability/" + studentId
         });
     };
+    var newStudent = function (param) {
+        return $http({
+            method: 'post',
+            url: baseUrls.loginUrl + "register/student",
+            data: param
+        })
+    };
+
+    var getSubjectId = function (year) {
+        return $http({
+            method: 'get',
+            url: baseUrls.mainUrl + "subject/all/" + year
+        });
+    };
 
     return {
+        GetStudentRecord: getStudentRecord,
+        newStudent : newStudent,
         GetSubjectId: getSubjectId,
-        GetStudentRecord: getStudentRecord
     }
 });
