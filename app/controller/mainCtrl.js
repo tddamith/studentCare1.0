@@ -4,6 +4,7 @@
 
 stuCareApp.controller('mainCtrl', function ($scope, studentServices) {
 
+    //#STUDENT FUNCTION
     $scope.student = function () {
         return {
             openMode: function () {
@@ -11,6 +12,18 @@ stuCareApp.controller('mainCtrl', function ($scope, studentServices) {
             },
             closeMode: function () {
                 $('#studentModel').addClass('display-none');
+            }
+        }
+    }();
+
+    //#ADVERTISEMENT FUNCTION
+    $scope.advertisement = function () {
+        return {
+            openMode: function () {
+                $('#advertisementModel').removeClass('display-none');
+            },
+            closeMode: function () {
+                $('#advertisementModel').addClass('display-none');
             }
         }
     }();

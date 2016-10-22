@@ -1,0 +1,247 @@
+<div ng-controller="mainCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <div class="dashboard-btn-wrap bg-color1">
+                    <div class="header">
+                        <h3>STUDENT</h3>
+                        <p>create new account</p>
+                    </div>
+
+                    <div class="btn-img-wrapper">
+                        <img src="assets/img/student.png" width="225">
+                    </div>
+                    <div class="dashboard-btn-body ">
+                        <div class="btn-wrap yellow" ng-click="student.openMode();">
+                            Add new
+                        </div>
+                        <div class="btn-wrap yellow">
+                            Update and view student
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="dashboard-btn-wrap bg-color2">
+                    <div class="header">
+                        <h3>advertisement </h3>
+                        <p>create your advertisement </p>
+                    </div>
+                    <div class="btn-img-wrapper">
+                        <img src="assets/img/advertisement.png" width="200">
+                    </div>
+                    <div class="dashboard-btn-body">
+                        <div class="btn-wrap blue">
+                            new student
+                        </div>
+                        <div class="btn-wrap blue">
+                            Update and view student
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="dashboard-btn-wrap bg-color3">
+                    <div class="header">
+                        <h3>TIME TABLE</h3>
+                        <p>create new time table</p>
+                    </div>
+                    <div class="btn-img-wrapper">
+                        <img src="assets/img/time-table.png" width="200">
+                    </div>
+                    <div class="dashboard-btn-body">
+                        <div class="btn-wrap green">
+                            Add new
+                        </div>
+                        <div class="btn-wrap green">
+                            Update and view student
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STUDENT -->
+    <div id="studentModel" class="full-with-model display-none ">
+        <div class="col-lg-offset-3 col-lg-6">
+            <div class="model animated bounceIn">
+                <div class="header">
+                    <div class="col-md-6">
+                        <h4>
+                            NEW STUDENT
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="model-btn">
+                            <li><span class="btn-save">SAVE</span></li>
+                            <li><span class="btn-close" ng-click="student.closeMode();">CLOSE</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="body">
+                    <!-- START FORM -->
+                    <div class="col-lg-12">
+                        <form>
+                            <div class="form-group">
+                                <!-- FULL NAME -->
+                                <label>Full Name</label>
+                                <input type="text" ng-model="student.name" class="form-control form-text" id="fullName">
+                            </div>
+                            <div class="row">
+                                <!-- student_refno -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Student refNo" ng-model="student.student_refno"
+                                               class="form-control form-text" id="student_refno">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <!-- year -->
+                                    <div class="form-group">
+                                        <input type="text" placeholder="year" ng-model="student.year"
+                                               class="form-control form-text" id="year">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BirthDay -->
+                            <label>BirthDay</label>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="" disabled selected>year</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="" disabled selected>month</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="" disabled selected>day</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Gender -->
+                                <div class="col-lg-4">
+                                    <label for="gender">Gender</label>
+                                    <div class="form-group">
+                                        <select class="form-control"
+                                                id="gender"
+                                                ng-model="student.gender">
+                                            <option value="" disabled selected>select your gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <!-- Faculty -->
+                                    <label for="faculty">Faculty</label>
+                                    <div class="form-group">
+                                        <select class="form-control"
+                                                id="faculty"
+                                                ng-model="student.faculty">
+                                            <option value="" disabled selected>select your faculty</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <!-- NIC -->
+                                    <label for="nic">NIC</label>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="student.nic" ng-model="student.student_refno"
+                                                   class="form-control form-text" id="nic">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <!-- Contact No -->
+                                    <label for="contactNo">Contact No</label>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <input type="text"
+                                                   ng-model="student.contactNo"
+                                                   class="form-control form-text" id="contactNo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END -->
+                </div>
+
+                <div class="model-background">
+                    <img src="assets/img/student.png" width="225">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END -->
+
+    <!-- ADVERTISEMENT -->
+    <div id="advertisementModel" class="full-with-model display-none ">
+        <div class="col-lg-offset-3 col-lg-6">
+            <div class="model animated bounceIn">
+                <div class="header">
+                    <div class="col-md-6">
+                        <h4>
+                            NEW ADVERTISEMENT
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="model-btn">
+                            <li><span class="btn-save">SAVE</span></li>
+                            <li><span class="btn-close" ng-click="advertisement.closeMode();">CLOSE</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
