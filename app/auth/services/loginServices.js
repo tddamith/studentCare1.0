@@ -17,7 +17,7 @@ stuCareApp.factory('loginService', function ($http, baseUrls) {
             url: baseUrls.loginUrl + "login",
             data: _obj
         })
-    }
+    };
 
     var getCookie = function(c_name) {
         var name = c_name + "=";
@@ -32,7 +32,7 @@ stuCareApp.factory('loginService', function ($http, baseUrls) {
             }
         }
         return "";
-    }
+    };
 
     return {
         SignUpMe: signUp,

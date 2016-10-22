@@ -28,6 +28,8 @@
     "angular-animate": "^1.5.8",
     "angular-sanitize": "^1.5.8",
     "angular-local-storage": "^0.2.7",
-    "angular-pnotify": "^0.1.2"
+    "angular-pnotify": "^0.1.2",
+    "moment": "^2.15.1",
+    "angular-bootstrap-datetimepicker": "^1.1.3"
   }
 }

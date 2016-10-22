@@ -3,18 +3,16 @@
  */
 
 
-stuCareApp.factory('adverServices', function ($http, baseUrls) {
-    var createNew = function (param) {
+stuCareApp.factory('studentServices', function ($http, baseUrls) {
+
+    var getSubjectId = function (year) {
         return $http({
-            method: 'post',
-            url: baseUrls.loginUrl + "register/parent",
-            data: param
-        }).then(function (response) {
-            return response.data.IsSuccess;
+            method: 'get',
+            url: baseUrls.mainUrl + "subject/all/" + year
         });
     };
 
     return {
-        CrateNew: createNew
+        GetSubjectId: getSubjectId
     }
 });

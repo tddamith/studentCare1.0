@@ -46,7 +46,7 @@
             <div class="col-lg-4">
                 <div class="dashboard-btn-wrap bg-color3">
                     <div class="header">
-                        <h3>TIME TABLE</h3>
+                        <h3>attendance</h3>
                         <p>create new time table</p>
                     </div>
                     <div class="btn-img-wrapper">
@@ -247,27 +247,43 @@
                         <form>
                             <div class="row">
                                 <!-- student_refno -->
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <label for="gender">Admin ID</label>
                                     <div class="form-group">
                                         <input type="text" placeholder="adminID" disabled
-                                               ng-model="student.student_refno"
+                                               ng-model="advert.adminId"
                                                class="form-control form-text" id="adminId">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <!-- year -->
-                                    <label for="gender">subject ID</label>
-                                    <div class="form-group">
-                                        <select class="form-control"
-                                                ng-model="faculty">
-                                            <option value="" disabled selected>select your subbjectID</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label for="gender">Year</label>
+                                            <select class="form-control"
+                                                    ng-change="advertisement.changeYear(advert.year)"
+                                                    ng-model="advert.year">
+                                                <option value="" disabled selected>year</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="form-group">
+                                            <label for="gender">subject ID</label>
+                                            <select class="form-control"
+                                                    ng-model="faculty">
+                                                <option value="" disabled selected>select your subbjectID</option>
+                                                <option value="{{subject.name}}"
+                                                        ng-repeat="subject in subjectObj">
+                                                    {{subject.name}}
+                                                </option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -277,33 +293,22 @@
                                 <textarea class="form-control" rows="5"></textarea>
                             </div>
 
-
                             <!-- BirthDay -->
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="gender">Date</label>
-                                        <select class="form-control">
-                                            <option value="" disabled selected>year</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <input type="text" placeholder="adminID" disabled
+                                               ng-model="advert.date"
+                                               class="form-control form-text" >
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="gender">Time</label>
-                                        <select class="form-control">
-                                            <option value="" disabled selected>month</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <input type="text" placeholder="adminID" disabled
+                                               ng-model="advert.time"
+                                               class="form-control form-text" >
                                     </div>
                                 </div>
                             </div>
@@ -322,5 +327,7 @@
             </div>
         </div>
     </div>
+
+    <!--
 
 </div>

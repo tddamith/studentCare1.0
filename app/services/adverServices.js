@@ -3,18 +3,6 @@
  */
 
 
-stuCareApp.factory('studentServices', function ($http, baseUrls) {
-    var createNew = function (param) {
-        return $http({
-            method: 'post',
-            url: baseUrls.loginUrl + "register/parent",
-            data: param
-        }).then(function (response) {
-            return response.data.IsSuccess;
-        });
-    };
+stuCareApp.factory('adverServices', function ($http, baseUrls) {
 
-    return {
-        CrateNew: createNew
-    }
 });

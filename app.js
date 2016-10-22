@@ -2,7 +2,9 @@
  * Created by **** on 10/20/2016.
  */
 
-var stuCareApp = angular.module('stuCareApp', ['ngRoute', 'ui.bootstrap', 'ui.router','jlareau.pnotify']);
+var stuCareApp = angular.module('stuCareApp', ['ngRoute', 'ui.bootstrap',
+    'ui.router', 'jlareau.pnotify',
+    'ui.bootstrap.datetimepicker']);
 
 
 //app router
