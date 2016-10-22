@@ -2,7 +2,8 @@
  * Created by **** on 10/20/2016.
  */
 
-var stuCareApp = angular.module('stuCareApp', ['ngRoute', 'jlareau.pnotify', 'ui.bootstrap', 'ui.router']);
+var stuCareApp = angular.module('stuCareApp', ['ngRoute', 'jlareau.pnotify',
+    'ui.bootstrap', 'ui.router','yaru22.angular-timeago','jkuri.slimscroll']);
 
 
 //app router
@@ -15,7 +16,7 @@ stuCareApp.config(["$httpProvider", "$stateProvider", "$urlRouterProvider",
             templateUrl: "app/views/dashboard.html",
             controller: 'mainCtrl',
             data: {
-                requireLogin: true,
+                requireLogin: true
             }
         }).state('dashboard.admin', {
             url: "/admin",
@@ -33,7 +34,10 @@ stuCareApp.config(["$httpProvider", "$stateProvider", "$urlRouterProvider",
             }
         }).state('login', {
             url: "/login",
-            templateUrl: "app/auth/login.html"
+            templateUrl: "app/auth/login.html",
+            data: {
+                requireLogin: false
+            }
         })
     }]);
 
