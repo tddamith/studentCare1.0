@@ -2,7 +2,7 @@
  * Created by **** on 10/20/2016.
  */
 
-var stuCareApp = angular.module('stuCareApp', ['ngRoute','jlareau.pnotify', 'ui.bootstrap', 'ui.router']);
+var stuCareApp = angular.module('stuCareApp', ['ngRoute', 'jlareau.pnotify', 'ui.bootstrap', 'ui.router']);
 
 
 //app router
@@ -13,10 +13,24 @@ stuCareApp.config(["$httpProvider", "$stateProvider", "$urlRouterProvider",
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/views/dashboard.html",
-            controller : 'mainCtrl'
+            controller: 'mainCtrl',
+            data: {
+                requireLogin: true,
+            }
         }).state('dashboard.admin', {
             url: "/admin",
-            templateUrl: "app/views/admin.html"
+            templateUrl: "app/views/admin.html",
+            data: {
+                requireLogin: true,
+                navigation: "ADMIN"
+            }
+        }).state('dashboard.parent', {
+            url: "/parent",
+            templateUrl: "app/views/parent.html",
+            data: {
+                requireLogin: true,
+                navigation: "PARENT"
+            }
         }).state('login', {
             url: "/login",
             templateUrl: "app/auth/login.html"
@@ -32,3 +46,17 @@ var baseUrls = {
 stuCareApp.constant('baseUrls', baseUrls);
 
 
+//Authentication
+stuCareApp.run(function ($rootScope, loginService, $location, $state) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+        var requireLogin = toState.data.requireLogin;
+        if (requireLogin) {
+            if (!loginService.getToken()) {
+                event.preventDefault();
+                $state.go('login');
+            }
+            // get me a login modal!
+        }
+    });
+
+});

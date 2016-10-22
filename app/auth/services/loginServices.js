@@ -3,7 +3,7 @@
  */
 
 stuCareApp.factory('loginService', function ($http, baseUrls) {
-    var signUp = function (param) { 
+    var signUp = function (param) {
         return $http({
             method: 'post',
             url: baseUrls.loginUrl + "register/parent",
@@ -11,7 +11,7 @@ stuCareApp.factory('loginService', function ($http, baseUrls) {
         })
     };
 
-    var signIn = function(_obj){
+    var signIn = function (_obj) {
         return $http({
             method: 'post',
             url: baseUrls.loginUrl + "login",
@@ -19,30 +19,46 @@ stuCareApp.factory('loginService', function ($http, baseUrls) {
         })
     }
 
-    var getCookie = function(c_name) {
+    var getCookie = function (c_name) {
         var name = c_name + "=";
         var ca = document.cookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
+        for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
-            while (c.charAt(0)==' ') {
+            while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
             if (c.indexOf(name) == 0) {
-                return c.substring(name.length,c.length);
+                return c.substring(name.length, c.length);
             }
         }
         return "";
-    }
-    var getUserName = function(){
+    };
+
+    var getCookieState = function (c_name) {
+        var name = c_name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                return true;
+            }
+            if (c.indexOf(name) == 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    var getUserName = function () {
         var cookieObj = getCookie('authData');
         cookieObj = JSON.parse(cookieObj);
         return cookieObj.userName
-    }
+    };
 
     return {
         SignUpMe: signUp,
         signInMe: signIn,
-        getCookie : getCookie,
-        getUserName : getUserName
+        getCookie: getCookie,
+        getUserName: getUserName
     }
 });
