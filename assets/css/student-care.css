@@ -362,3 +362,36 @@ label {
     -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0 8px rgba(102, 175, 233, 0);
     box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0 8px rgba(102, 175, 233, 0);
 }
+
+.student-result {
+    width: 100%;
+    height: 70px;
+    background: #278489;
+    padding: 2px 10px 10px 10px;
+}
+
+.student-result > h5 {
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+}
+
+.student-result > div {
+    text-align: left;
+    color: #fff;
+    font-weight: 300;
+}
+
+.note-found-wrap {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: #2bb468;
+    padding-top: 50px;
+}
+
+.tbl-header{
+    font-size: 18px;
+    font-weight: 600;
+    color: #278489;
+}

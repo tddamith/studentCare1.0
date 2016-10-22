@@ -53,7 +53,7 @@
                         <img src="assets/img/time-table.png" width="200">
                     </div>
                     <div class="dashboard-btn-body">
-                        <div class="btn-wrap green">
+                        <div class="btn-wrap green" ng-click="attendance.openMode();">
                             Add new
                         </div>
                         <div class="btn-wrap green">
@@ -84,7 +84,6 @@
                     </div>
 
                 </div>
-
                 <div class="body">
                     <!-- START FORM -->
                     <div class="col-lg-12">
@@ -209,9 +208,8 @@
                             </div>
                         </form>
                     </div>
-                    <!-- END -->
                 </div>
-
+                <!-- END -->
                 <div class="model-background">
                     <img src="assets/img/student.png" width="225">
                 </div>
@@ -219,6 +217,7 @@
         </div>
 
     </div>
+
     <!-- END -->
 
     <!-- ADVERTISEMENT -->
@@ -300,7 +299,7 @@
                                         <label for="gender">Date</label>
                                         <input type="text" placeholder="adminID" disabled
                                                ng-model="advert.date"
-                                               class="form-control form-text" >
+                                               class="form-control form-text">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -308,7 +307,7 @@
                                         <label for="gender">Time</label>
                                         <input type="text" placeholder="adminID" disabled
                                                ng-model="advert.time"
-                                               class="form-control form-text" >
+                                               class="form-control form-text">
                                     </div>
                                 </div>
                             </div>
@@ -328,6 +327,144 @@
         </div>
     </div>
 
-    <!--
+    <!--ATTENDANCE -->
+    <div id="attendanceModel" class="full-with-model display-none">
+        <div class="col-lg-offset-2 col-lg-8">
+            <div class="model animated bounceIn">
+                <div class="header">
+                    <div class="col-md-6">
+                        <h4>
+                            NEW ATTENDANCE
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="model-btn">
+                            <li><span class="btn-save">SAVE</span></li>
+                            <li><span class="btn-close" ng-click="attendance.closeMode();">CLOSE</span></li>
+                        </ul>
+                    </div>
 
+                </div>
+
+                <div class="body">
+                    <div class="col-lg-12">
+                        <form>
+                            <div class="row">
+                                <!-- student_refno -->
+                                <div class="col-lg-6">
+                                    <label for="gender">Student ID *</label>
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="adminID"
+                                                       ng-model="studentAtt.id"
+                                                       class="form-control form-text" id="studentId"
+                                                       my-enter="attendance.getCurrentUser(studentAtt.id)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row">
+                                <!-- BirthDay -->
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Lecturer</label>
+                                        <select class="form-control"
+                                                ng-change="attendance.getLectureHasSubject(lectureName)"
+                                                ng-model="lectureName">
+                                            <option value="" disabled selected>Select Lecture Name</option>
+                                            <option value="{{lecture.name}}"
+                                                    ng-repeat="lecture in Lectures">{{lecture.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Subject</label>
+                                        <select class="form-control">
+                                            <option value="" disabled selected>select subject</option>
+                                            <option value="{{subject.subjectRef}}"
+                                                    ng-repeat="subject in lectureHasSubjectObj ">{{subject.subjectname}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Date time -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Date</label>
+                                        <input type="text" disabled
+                                               ng-model="attendanceObj.date"
+                                               class="form-control form-text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Time</label>
+                                        <input type="text" placeholder="adminID" disabled
+                                               ng-model="attendanceObj.time"
+                                               class="form-control form-text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gender">Check</label>
+                                        <select class="form-control"
+                                                ng-model="attendanceObj.check">
+                                            <option value="" disabled selected>Check</option>
+                                            <option value="IN">IN</option>
+                                            <option value="OUT">OUT</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 20px;">
+                                <div class="col-lg-12">
+                                    <h5 class="tbl-header">Student Details</h5>
+                                    <div class="note-found-wrap" ng-show="!studentAtt.found">
+                                        DATA NOT FOUND...!
+                                    </div>
+                                    <table class="table table-condensed" ng-show="studentAtt.found">
+                                        <thead>
+                                        <tr>
+                                            <th>RegNo</th>
+                                            <th>Student Name</th>
+                                            <th>Faculty</th>
+                                            <th>Gender</th>
+                                            <th>contact No</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td scope="row">{{studentAtt.data.regNo}}</td>
+                                            <td>{{studentAtt.data.name}}</td>
+                                            <th>{{studentAtt.data.faculty}}</th>
+                                            <td>{{studentAtt.data.gender}}</td>
+                                            <td>{{studentAtt.data.contactNo}}</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>

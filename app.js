@@ -26,8 +26,8 @@ stuCareApp.config(["$httpProvider", "$stateProvider", "$urlRouterProvider",
 
 //public API url
 var baseUrls = {
-    'loginUrl': 'http://192.168.1.107:3000/',
-    'mainUrl': 'http://192.168.1.107:3000/'
+    'loginUrl': 'http://192.168.5.178:3000/',
+    'mainUrl': 'http://192.168.5.178:3000/'
 
 };
 stuCareApp.constant('baseUrls', baseUrls);
