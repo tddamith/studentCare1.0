@@ -12,15 +12,15 @@
                     <form>
                         <div class="form-group">
                             <label for="loginEmail" class="font-text-gray">Email address</label>
-                            <input type="email" class="login-txt form-control" id="loginEmail"
+                            <input type="email" ng-model="objSignIn.userName" class="login-txt form-control" id="loginEmail"
                             >
                         </div>
                         <div class="form-group">
                             <label for="loginPwd" class="font-text-gray">Password</label>
-                            <input type="password" class="login-txt form-control" id="loginPwd"
+                            <input type="password" ng-model="objSignIn.password" class="login-txt form-control" id="loginPwd"
                             >
                         </div>
-                        <button type="submit" class="btn login-btn btn-default btn-block">LOG IN</button>
+                        <button type="submit" class="btn login-btn btn-default btn-block" ng-click="clickSignUp.signInMe()">LOG IN</button>
                     </form>
 
                     <div class="text-with-line">
@@ -47,7 +47,7 @@
                             <input type="email" ng-model="objSignUp.email" class="login-txt form-control" id="signUpEmail"
                             >
                         </div>
-
+                       
                         <div class="form-group">
                             <label for="signUpPwd" class="font-text-gray">Password</label>
                             <input type="password" ng-model="objSignUp.password" class="login-txt form-control" id="signUpPwd"/>
