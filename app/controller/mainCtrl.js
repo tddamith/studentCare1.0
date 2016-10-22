@@ -2,7 +2,7 @@
  * Created by **** on 10/22/2016.
  */
 
-stuCareApp.controller('mainCtrl', function ($scope, studentServices) {
+stuCareApp.controller('mainCtrl', function ($scope, studentServices,notificationService) {
 
     //#STUDENT FUNCTION
     $scope.student = function () {
@@ -27,5 +27,4 @@ stuCareApp.controller('mainCtrl', function ($scope, studentServices) {
             }
         }
     }();
-
 });

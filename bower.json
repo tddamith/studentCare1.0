@@ -27,6 +27,7 @@
     "angular-ui-router": "^0.3.1",
     "angular-animate": "^1.5.8",
     "angular-sanitize": "^1.5.8",
-    "angular-local-storage": "^0.2.7"
+    "angular-local-storage": "^0.2.7",
+    "angular-pnotify": "^0.1.2"
   }
 }

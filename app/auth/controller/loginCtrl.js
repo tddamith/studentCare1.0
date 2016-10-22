@@ -2,7 +2,7 @@
  * Created by **** on 10/21/2016.
  */
 
-stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationService) {
+stuCareApp.controller('loginCtrl', function ($scope, loginService, notificationService) {
 
     //##SIGN IN FUNCTIONS
     $scope.clickSignIn = function () {
@@ -25,30 +25,31 @@ stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationSe
         return {
             signUpMe: function () {
                 $scope.objSignUp.confirm_password = $scope.objSignUp.password;
-                $scope.objSignUp.contact_no = '0771234567'; 
+                $scope.objSignUp.contact_no = '0771234567';
                 loginService.SignUpMe($scope.objSignUp).then(function (response) {
-                   var data = response.data
-                   if (data.status) {
-                        notificationService.success('successfully Sign up'); 
+                    var data = response.data
+                    if (data.status) {
+                        notificationService.success('successfully Sign up');
                         $scope.clickSignIn.goToSignIn()
-                   }else{
+                    } else {
                         notificationService.error(data.message)
-                   }
+                    }
                 }, function (err) {
-                     notificationService.error('network error occured. please try again later !!!')
+                    notificationService.error('network error occured. please try again later !!!')
                 });
             },
-            signInMe : function(){
-                loginService.signInMe($scope.objSignIn).then(function(response){
+            signInMe: function () {
+                loginService.signInMe($scope.objSignIn).then(function (response) {
                     var data = response.data;
                     console.log(data)
                     if (data.status) {
                         setCookie(data.data);
-                        notificationService.success('successfully logged in');                }
-                    else{                
-                       notificationService.error('incorrect username or password !!!')
+                        notificationService.success('successfully logged in');
                     }
-                },function(response){           
+                    else {
+                        notificationService.error('incorrect username or password !!!')
+                    }
+                }, function (response) {
                     notificationService.error('network error occured. please try again later !!!')
                 })
             }
@@ -57,15 +58,15 @@ stuCareApp.controller('loginCtrl', function ($scope, loginService,notificationSe
     }();
 
     /*
-        set login credential to the 'authdata' cookies
-    */ 
+     set login credential to the 'authdata' cookies
+     */
 
-    var setCookie = function(_obj){
+    var setCookie = function (_obj) {
         var d = new Date(),
             exdays = 1;
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-        document.cookie =  'authData='+JSON.stringify(_obj) + ";" + expires + ";path=/";
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = 'authData=' + JSON.stringify(_obj) + ";" + expires + ";path=/";
     }
 });
 
