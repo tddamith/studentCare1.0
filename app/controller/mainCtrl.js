@@ -5,7 +5,7 @@
 stuCareApp.controller('mainCtrl', function ($scope, studentServices, attendanceServices,
                                             notificationService, loginService) {
 
-    $scope.userName = loginService.getUserName();
+    (loginService.getUserName()) ?  $scope.userName =loginService.getUserName() : $state.go('login')
     //#STUDENT FUNCTION
     $scope.student = function () {
         return {

@@ -35,14 +35,30 @@ stuCareApp.factory('loginService', function ($http, baseUrls) {
     }
     var getUserName = function(){
         var cookieObj = getCookie('authData');
-        cookieObj = JSON.parse(cookieObj);
-        return cookieObj.userName
+        if (cookieObj) {            
+            cookieObj = JSON.parse(cookieObj);
+            return cookieObj.userName
+        }
+        return false;
     }
+    var getType = function(){
+        var cookieObj = getCookie('authData');
+        if (cookieObj) {            
+            cookieObj = JSON.parse(cookieObj);
+            return cookieObj.type.toUpperCase()
+        }
+        return false;
+    }
+    var cookieStatus = function(){
+        (getCookie('authData')) ? return true : return false;
+    }
+
 
     return {
         SignUpMe: signUp,
         signInMe: signIn,
-        getCookie : getCookie,
-        getUserName : getUserName
+        getUserName : getUserName,
+        getType : getType,
+        cookieStatus : cookieStatus
     }
 });
