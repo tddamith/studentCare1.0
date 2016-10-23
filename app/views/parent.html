@@ -1,0 +1,106 @@
+<div ng-controller="parentCtrl">
+    <div class="row">
+        <div class="parent-main-wrapper">
+            <!-- student &parent details -->
+            <div class="col-md-2">
+                <div class="row">
+                    <h5 class="adv-main-wrapper-h5-2">PARENT</h5>
+                    <div class="parent-wrapper">
+                        <div class="parent-img">
+                            <img src="assets/img/profileAvatar.png" width="194"/>
+                        </div>
+                        <div class="parent-body">
+                            {{parentObj.parentName}}
+                        </div>
+                        <div class="parent-body2">
+                            {{parentObj.parentEmail}}
+                        </div>
+                        <div class="parent-body2">
+                            {{parentObj.parentContactNo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="student-view-wrapper">
+                        <div class="parent-body">
+                            {{parentObj.student.name}}
+                        </div>
+                        <div class="parent-body2">
+                            {{parentObj.student.regNo}}
+                        </div>
+                        <div class="parent-body2">
+                            {{parentObj.student.gender}}
+                        </div>
+                        <div class="parent-body2">
+                            {{parentObj.student.faculty}}
+                        </div>
+                        <div class="parent-body2">
+                            {{parentObj.student.contactNo}}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <!-- ATTENDANCE -->
+                <div class="attendance-wrapper">
+                    <div class="row" style="margin-left: 10px;margin-right: 10px;">
+                        <h5 class="adv-main-wrapper-h5-2">ATTENDANCE - {{parentObj.student.name}}</h5>
+                        <div class="atten-body">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Date</th>
+                                    <th>Start Time</th>
+                                    <th>Student ID</th>
+                                    <th>Subject ID</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="stuAtt in atteObj track by $index">
+                                    <td scope="row">{{stuAtt.id}}</td>
+                                    <td>{{stuAtt.date}}</td>
+                                    <td>{{stuAtt.startTime}}</td>
+                                    <td>{{stuAtt.studentID}}</td>
+                                    <td>{{stuAtt.subjectID}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h5 class="adv-main-wrapper-h5">ADVERTISEMENT</h5>
+                    <div class="adv-main-wrapper"
+                         ng-slimscroll
+                         opacity="0.2"
+                         position="right"
+                         height="500"
+                         distance="5px">
+                        <div class="adver-wrapper" ng-repeat="adv in adveObj track by $index">
+                            <div class="adver-body">
+                                {{adv.content}}
+                            </div>
+
+                            <div class="adver-footer">
+                                {{adv.date | timeAgo}}
+                            </div>
+
+                        </div>
+
+                        <div class="note-found-wrap" ng-show="adveObj.lenght==0">
+                            data not found..!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
